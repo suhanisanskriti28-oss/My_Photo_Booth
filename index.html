@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Gallery</title>
+
+    <!-- ✅ Add funky Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bitcount+Prop+Single+Ink:wght@100..900&display=swap"
+        rel="stylesheet">
+    <style>
+        /* Basic Reset */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #111;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-align: center;
+
+            /* ✅ Apply funky font */
+            font-family: 'Pacifico', cursive;
+            text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.2);
+            color: #ff66cc;
+        }
+
+        .gallery {
+            display: grid;
+            gap: 18px;
+            width: 100%;
+            max-width: 1200px;
+            background-color: rgba(255, 255, 255, 0.05);
+            padding: 15px;
+            border-radius: 10px;
+
+            /* Desktop: 3 columns */
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 650px;
+            object-fit: cover;
+            border-radius: 8px;
+            display: block;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.03);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Tablets: 2 columns */
+        @media (max-width: 900px) {
+            .gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .gallery img {
+                height: 600px;
+            }
+        }
+
+        /* Mobile: 1 column */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2rem;
+                margin-bottom: 15px;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+                gap: 10px;
+                padding: 10px;
+            }
+
+            .gallery img {
+                height: 500px;
+            }
+        }
+
+        /* Extra small devices */
+        @media (max-width: 400px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .gallery img {
+                height: 350px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>My Photography!✨</h1>
+    <div class="gallery">
+        <img src="img1.jpeg" alt="Image 1" />
+        <img src="img2.jpeg" alt="Image 2" />
+        <img src="img3.jpeg" alt="Image 3" />
+        <img src="img4.jpeg" alt="Image 4" />
+        <img src="img5.jpeg" alt="Image 5" />
+        <img src="img6.jpeg" alt="Image 6" />
+        <img src="img7.jpeg" alt="Image 7" />
+        <img src="img8.jpeg" alt="Image 8" />
+        <img src="img9.jpeg" alt="Image 9" />
+        <img src="img10.jpeg" alt="Image 10" />
+        <img src="img11.jpeg" alt="Image 11" />
+        <img src="img12.jpeg" alt="Image 12" />
+    </div>
+</body>
+
+</html>
